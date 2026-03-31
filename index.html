@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aksham Kalyan Sansthan — Empowering Communities, Transforming Lives</title>
+  <meta name="description" content="Aksham Kalyan Sansthan is a registered Indian NGO dedicated to education, healthcare, women empowerment, disaster relief, and community development. Join us to create lasting social impact." />
+  <meta name="keywords" content="NGO, India, charity, education, healthcare, women empowerment, disaster relief, community development, donate, volunteer" />
+  <meta name="author" content="Aksham Kalyan Sansthan" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#1a8a5c',
+              'green-dark': '#14694a',
+              'green-light': '#e8f5ef',
+              blue: '#2563eb',
+              'blue-light': '#eff6ff',
+              orange: '#f59e0b',
+              'orange-light': '#fef3c7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="#" class="nav-logo">
+        <img src="images/logo.png" alt="Aksham Kalyan Sansthan Logo" />
+        <div class="nav-logo-text">
+          Aksham Kalyan Sansthan
+          <span>Empowering Lives, Enabling Dignity</span>
+        </div>
+      </a>
+
+      <div class="nav-links flex items-center gap-1">
+        <a href="#about">About</a>
+        <a href="#programs">Our Work</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#events">Events</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+        <a href="#donate" class="nav-donate-btn">Donate ❤️</a>
+      </div>
+
+      <div class="mobile-menu-btn" id="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="images/main photo/WhatsApp Image 2026-03-28 at 20.11.20 (1).jpeg" alt="Community Impact" />
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-heart"></i> Registered NGO — India
+        </div>
+        <h1 class="hero-title">
+          Empowering Lives, <br />
+          <span class="highlight">Enabling Dignity</span>
+        </h1>
+        <p class="hero-text">
+          Aksham Kalyan Sansthan is committed to uplifting underserved communities
+          through education, healthcare, women empowerment, and sustainable development
+          across India.
+        </p>
+        <div class="hero-buttons">
+          <a href="#donate" class="btn-primary">
+            <i class="fas fa-hand-holding-heart"></i> Donate Now
+          </a>
+          <a href="#involved" class="btn-secondary">
+            <i class="fas fa-users"></i> Join Us
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-mouse"></div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ==================== IMPACT STATS ==================== -->
+  <section class="stats-section section-padding-sm" id="stats">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="stats-container reveal">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-number"><span class="counter" data-target="25000" data-suffix="+">0</span></div>
+          <div class="stat-label">Lives Impacted</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-school"></i></div>
+          <div class="stat-number"><span class="counter" data-target="5200" data-suffix="+">0</span></div>
+          <div class="stat-label">Education Kits Distributed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-stethoscope"></i></div>
+          <div class="stat-number"><span class="counter" data-target="120" data-suffix="+">0</span></div>
+          <div class="stat-label">Medical Camps Organized</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-tree"></i></div>
+          <div class="stat-number"><span class="counter" data-target="15000" data-suffix="+">0</span></div>
+          <div class="stat-label">Trees Planted</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section class="about-section section-padding" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="about-grid">
+        <!-- Left: Image -->
+        <div class="about-image-wrapper reveal-left">
+          <div class="about-image">
+            <img src="images/gallery-community.png" alt="Community Gathering" />
+          </div>
+          <div class="about-experience-badge">
+            <div class="years">10+</div>
+            <div class="label">Years of Service</div>
+          </div>
+        </div>
+
+        <!-- Right: Text -->
+        <div class="reveal-right">
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title">Empowering Communities Through Compassion & Action</h2>
+          <div class="about-text">
+            <p>
+              <strong>Aksham Kalyan Sansthan</strong> is a registered non-governmental organization
+              based in India, dedicated to creating meaningful and lasting social impact across
+              education, healthcare, women empowerment, environmental conservation, and disaster relief.
+            </p>
+            <p>
+              Founded with the belief that every individual deserves access to basic opportunities,
+              we work tirelessly with local communities, volunteers, and partners to bridge gaps
+              and build a more inclusive society. Our programs reach thousands of lives across
+              rural and urban India every year.
+            </p>
+            <div class="mission-vision">
+              <div class="mv-card">
+                <h4><i class="fas fa-bullseye" style="color: var(--primary-green);"></i> Our Mission</h4>
+                <p>To empower marginalized communities through sustainable education, health initiatives, and skill development programs.</p>
+              </div>
+              <div class="mv-card">
+                <h4><i class="fas fa-eye" style="color: var(--primary-blue);"></i> Our Vision</h4>
+                <p>A world where every individual, regardless of background, has equal access to opportunities for growth and dignity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder Block -->
+      <div class="founder-block reveal">
+        <img src="images/founders/WhatsApp Image 2026-03-30 at 13.38.18.jpeg" alt="Dr. Ekta Dhariwal - Founder & President" class="founder-img" />
+        <div class="founder-text">
+          <h3>Message from Our Founder</h3>
+          <p class="founder-title">Founder & President, Aksham Kalyan Sansthan</p>
+          <blockquote>
+            "When we started this journey, our vision was simple — to touch lives that have been overlooked
+            and bring hope where there was none. Every school kit we distribute, every medical camp we organize,
+            and every tree we plant is a step toward the India we dream of. Together, we are not just an
+            organization — we are a movement."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROGRAMS / OUR WORK ==================== -->
+  <section class="programs-section section-padding" id="programs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="section-label justify-center" style="justify-content: center;">Our Programs</div>
+        <h2 class="section-title" style="text-align: center;">Creating Impact Across Multiple Fronts</h2>
+        <p class="section-subtitle mx-auto" style="text-align: center;">
+          From classrooms to clinics, from disaster zones to community centers — our work
+          spans across India's most pressing social challenges.
+        </p>
+      </div>
+
+      <div class="programs-grid">
+        <!-- Card 1: Education -->
+        <a href="programs/education.html" class="program-card reveal delay-1">
+          <div class="program-card-image">
+            <img src="images/education-support.png" alt="Education Support" />
+            <div class="overlay"></div>
+          </div>
+          <div class="program-card-body">
+            <div class="program-card-icon" style="background: #e8f5ef; color: #1a8a5c;">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Education Support</h3>
+            <p>Distributing school kits, books, uniforms, and conducting awareness programs to ensure every child gets a fair start.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Card 2: Menstrual Hygiene -->
+        <a href="programs/hygiene.html" class="program-card reveal delay-2">
+          <div class="program-card-image">
+            <img src="images/hygiene-program.png" alt="Menstrual Hygiene" />
+            <div class="overlay"></div>
+          </div>
+          <div class="program-card-body">
+            <div class="program-card-icon" style="background: #fce7f3; color: #ec4899;">
+              <i class="fas fa-ribbon"></i>
+            </div>
+            <h3>Menstrual Hygiene</h3>
+            <p>Providing sanitary napkins and hygiene education in schools, empowering girls to attend school with dignity and confidence.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Card 3: Healthcare -->
+        <a href="programs/healthcare.html" class="program-card reveal delay-3">
+          <div class="program-card-image">
+            <img src="images/medical-camp.png" alt="Healthcare Camp" />
+            <div class="overlay"></div>
+          </div>
+          <div class="program-card-body">
+            <div class="program-card-icon" style="background: #eff6ff; color: #2563eb;">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Healthcare & Medical Camps</h3>
+            <p>Organizing free health check-ups, medical camps, and hospital support for underserved communities across India.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Card 4: Specially Abled -->
+        <a href="programs/specially-abled.html" class="program-card reveal delay-4">
+          <div class="program-card-image">
+            <img src="images/education-support.png" alt="Specially Abled Support" />
+            <div class="overlay"></div>
+          </div>
+          <div class="program-card-body">
+            <div class="program-card-icon" style="background: #f3e8ff; color: #8b5cf6;">
+              <i class="fas fa-wheelchair"></i>
+            </div>
+            <h3>Specially Abled Support</h3>
+            <p>Providing tricycles, wheelchairs, and assistive devices to specially abled individuals for greater mobility and independence.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Card 5: Women Empowerment -->
+        <a href="programs/women-empowerment.html" class="program-card reveal delay-5">
+          <div class="program-card-image">
+            <img src="images/women-empowerment.png" alt="Women Empowerment" />
+            <div class="overlay"></div>
+          </div>
+          <div class="program-card-body">
+            <div class="program-card-icon" style="background: #fef3c7; color: #f59e0b;">
+              <i class="fas fa-female"></i>
+            </div>
+            <h3>Women Empowerment</h3>
+            <p>Livelihood training, skill development, and self-reliance programs to help women achieve financial independence and dignity.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Card 6: Environment -->
+        <a href="programs/environment.html" class="program-card reveal delay-6">
+          <div class="program-card-image">
+            <img src="images/tree-plantation.png" alt="Tree Plantation" />
+            <div class="overlay"></div>
+          </div>
+          <div class="program-card-body">
+            <div class="program-card-icon" style="background: #dcfce7; color: #16a34a;">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3>Environmental Initiatives</h3>
+            <p>Large-scale tree plantation drives and environmental awareness campaigns to combat climate change and protect biodiversity.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Card 7: Disaster Relief -->
+        <a href="programs/disaster-relief.html" class="program-card reveal delay-7">
+          <div class="program-card-image">
+            <img src="images/disaster-relief.png" alt="Disaster Relief" />
+            <div class="overlay"></div>
+          </div>
+          <div class="program-card-body">
+            <div class="program-card-icon" style="background: #fee2e2; color: #ef4444;">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3>Disaster Relief</h3>
+            <p>Rapid emergency response with food, shelter, and medical aid to communities affected by natural disasters and crises.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Card 8: Community & Sports -->
+        <a href="programs/community-sports.html" class="program-card reveal delay-8">
+          <div class="program-card-image">
+            <img src="images/sports-youth.png" alt="Sports & Community" />
+            <div class="overlay"></div>
+          </div>
+          <div class="program-card-body">
+            <div class="program-card-icon" style="background: #e0f2fe; color: #0284c7;">
+              <i class="fas fa-running"></i>
+            </div>
+            <h3>Community & Sports</h3>
+            <p>Engaging youth through sports events, cultural programs, and community awareness drives that foster unity and growth.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY SECTION ==================== -->
+  <section class="gallery-section section-padding" id="gallery">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="section-label" style="justify-content: center;">Our Gallery</div>
+        <h2 class="section-title" style="text-align: center;">Moments That Define Our Journey</h2>
+        <p class="section-subtitle mx-auto" style="text-align: center;">
+          A curated glimpse into lives we've touched — real stories, real impact, real change.
+        </p>
+      </div>
+
+      <div class="gallery-masonry reveal">
+        <!-- Large feature image -->
+        <div class="gallery-card gallery-card--tall" data-category="community">
+          <img src="images/gallery/community-awareness.jpeg" alt="Community Awareness Program" loading="lazy" />
+          <div class="gallery-card__overlay">
+            <span class="gallery-card__category">Community Events</span>
+            <h4 class="gallery-card__title">Community Awareness Drive</h4>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="gallery-card" data-category="education">
+          <img src="images/gallery/education-books.jpeg" alt="Education Book Distribution" loading="lazy" />
+          <div class="gallery-card__overlay">
+            <span class="gallery-card__category">Education</span>
+            <h4 class="gallery-card__title">Book Distribution Program</h4>
+          </div>
+        </div>
+
+        <!-- Healthcare -->
+        <div class="gallery-card" data-category="healthcare">
+          <img src="images/gallery/healthcare-visit.jpeg" alt="Healthcare Hospital Visit" loading="lazy" />
+          <div class="gallery-card__overlay">
+            <span class="gallery-card__category">Healthcare</span>
+            <h4 class="gallery-card__title">Hospital Patient Care</h4>
+          </div>
+        </div>
+
+        <!-- Women Empowerment -->
+        <div class="gallery-card gallery-card--wide" data-category="women">
+          <img src="images/gallery/women-gathering.jpeg" alt="Women Empowerment Gathering" loading="lazy" />
+          <div class="gallery-card__overlay">
+            <span class="gallery-card__category">Women Empowerment</span>
+            <h4 class="gallery-card__title">Women's Awareness Camp</h4>
+          </div>
+        </div>
+
+        <!-- Environment -->
+        <div class="gallery-card" data-category="environment">
+          <img src="images/gallery/environment-plantation.jpeg" alt="Tree Plantation Drive" loading="lazy" />
+          <div class="gallery-card__overlay">
+            <span class="gallery-card__category">Environment</span>
+            <h4 class="gallery-card__title">Tree Plantation Drive</h4>
+          </div>
+        </div>
+
+        <!-- Sports -->
+        <div class="gallery-card gallery-card--tall" data-category="community">
+          <img src="images/gallery/sports-trophy.jpeg" alt="Sports Trophy Ceremony" loading="lazy" />
+          <div class="gallery-card__overlay">
+            <span class="gallery-card__category">Community & Sports</span>
+            <h4 class="gallery-card__title">Sports Championship Celebration</h4>
+          </div>
+        </div>
+
+        <!-- Hygiene -->
+        <div class="gallery-card" data-category="women">
+          <img src="images/gallery/hygiene-distribution.jpeg" alt="Hygiene Kit Distribution" loading="lazy" />
+          <div class="gallery-card__overlay">
+            <span class="gallery-card__category">Women Empowerment</span>
+            <h4 class="gallery-card__title">Hygiene Kit Distribution</h4>
+          </div>
+        </div>
+
+        <!-- Education kids -->
+        <div class="gallery-card" data-category="education">
+          <img src="images/gallery/education-kids.jpeg" alt="Education Support for Children" loading="lazy" />
+          <div class="gallery-card__overlay">
+            <span class="gallery-card__category">Education</span>
+            <h4 class="gallery-card__title">Stationery Distribution to Children</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium CTA Button -->
+      <div class="gallery-cta reveal">
+        <a href="gallery.html" class="gallery-cta__btn" id="explore-gallery-btn">
+          <span class="gallery-cta__text">Explore Full Gallery</span>
+          <span class="gallery-cta__icon"><i class="fas fa-arrow-right"></i></span>
+        </a>
+        <p class="gallery-cta__sub">Discover 24+ moments of impact across all our programs</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="testimonials-section section-padding" id="testimonials">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <div class="section-label" style="justify-content: center;">Testimonials</div>
+        <h2 class="section-title" style="text-align: center;">Voices of Hope & Gratitude</h2>
+        <p class="section-subtitle mx-auto" style="text-align: center;">
+          Hear from the people our work has touched — donors, beneficiaries, and community leaders.
+        </p>
+      </div>
+
+      <div class="testimonials-slider">
+        <div class="testimonial-card reveal delay-1">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            Aksham Kalyan Sansthan's education program changed my daughter's life. She received books, a
+            school bag, and the motivation to dream big. We are forever grateful for their support.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-author-img">RD</div>
+            <div class="testimonial-author-info">
+              <h4>Rekha Devi</h4>
+              <p>Beneficiary, Uttar Pradesh</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            I've been donating to the Sansthan for three years now. Their transparency and genuine
+            commitment to social change is remarkable. Every rupee is accounted for and every impact is visible.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-author-img">AM</div>
+            <div class="testimonial-author-info">
+              <h4>Arun Mehta</h4>
+              <p>Regular Donor, Mumbai</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-3">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            The medical camp organized in our village was the first time many of us saw a doctor.
+            They provided free check-ups, medicines, and genuine care. This organization truly serves the people.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-author-img">SK</div>
+            <div class="testimonial-author-info">
+              <h4>Suresh Kumar</h4>
+              <p>Village Head, Madhya Pradesh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GET INVOLVED ==================== -->
+  <section class="involved-section section-padding" id="involved">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <div class="section-label" style="justify-content: center;">Get Involved</div>
+        <h2 class="section-title" style="text-align: center;">Be Part of the Change</h2>
+        <p class="section-subtitle mx-auto" style="text-align: center;">
+          There are many ways you can contribute to our mission. Every action creates a ripple of positive change.
+        </p>
+      </div>
+
+      <div class="involved-grid">
+        <div class="involved-card reveal delay-1">
+          <div class="involved-icon" style="background: #e8f5ef; color: #1a8a5c;">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <h3>Volunteer With Us</h3>
+          <p>Join our team of dedicated volunteers and make a direct difference in the lives of those who need it most. Your time and skills matter.</p>
+          <a href="#contact" class="btn-outline" style="font-size: 0.85rem; padding: 10px 24px;">
+            <i class="fas fa-user-plus"></i> Become a Volunteer
+          </a>
+        </div>
+
+        <div class="involved-card reveal delay-2">
+          <div class="involved-icon" style="background: #eff6ff; color: #2563eb;">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Partner With Us</h3>
+          <p>Collaborate as a corporate partner, institutional ally, or government body to amplify our social impact and reach more communities.</p>
+          <a href="#contact" class="btn-outline" style="font-size: 0.85rem; padding: 10px 24px; border-color: #2563eb; color: #2563eb;">
+            <i class="fas fa-link"></i> Become a Partner
+          </a>
+        </div>
+
+        <div class="involved-card reveal delay-3">
+          <div class="involved-icon" style="background: #fef3c7; color: #f59e0b;">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3>Sponsor a Program</h3>
+          <p>Choose a cause close to your heart — education, healthcare, environment — and sponsor it to create measurable, lasting change.</p>
+          <a href="#donate" class="btn-outline" style="font-size: 0.85rem; padding: 10px 24px; border-color: #f59e0b; color: #f59e0b;">
+            <i class="fas fa-gift"></i> Sponsor Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DONATION SECTION ==================== -->
+  <section class="donation-section section-padding" id="donate">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <div class="section-label" style="justify-content: center;">Support Our Cause</div>
+        <h2 class="section-title" style="text-align: center;">Your Donation Creates Real Impact</h2>
+        <p class="section-subtitle mx-auto" style="text-align: center;">
+          Every contribution, no matter the size, helps us reach more families and transform more lives.
+        </p>
+      </div>
+
+      <div class="donation-grid">
+        <!-- Left: Donation Options -->
+        <div class="donation-options reveal-left">
+          <div class="donation-option selected">
+            <div class="donation-option-icon" style="background: #e8f5ef; color: #1a8a5c;">📚</div>
+            <div class="donation-option-info">
+              <h4>Education Kit</h4>
+              <p>School bag, books, stationery for one child</p>
+            </div>
+            <span class="donation-option-price">₹500</span>
+          </div>
+
+          <div class="donation-option">
+            <div class="donation-option-icon" style="background: #fce7f3; color: #ec4899;">🎗️</div>
+            <div class="donation-option-info">
+              <h4>Hygiene Kit</h4>
+              <p>Sanitary napkins & hygiene essentials (6 months)</p>
+            </div>
+            <span class="donation-option-price">₹300</span>
+          </div>
+
+          <div class="donation-option">
+            <div class="donation-option-icon" style="background: #eff6ff; color: #2563eb;">🏥</div>
+            <div class="donation-option-info">
+              <h4>Medical Support</h4>
+              <p>Fund one patient's treatment at a medical camp</p>
+            </div>
+            <span class="donation-option-price">₹1,000</span>
+          </div>
+
+          <div class="donation-option">
+            <div class="donation-option-icon" style="background: #f3e8ff; color: #8b5cf6;">♿</div>
+            <div class="donation-option-info">
+              <h4>Mobility Aid</h4>
+              <p>Provide a tricycle or wheelchair</p>
+            </div>
+            <span class="donation-option-price">₹3,000</span>
+          </div>
+
+          <div class="donation-option">
+            <div class="donation-option-icon" style="background: #dcfce7; color: #16a34a;">🌳</div>
+            <div class="donation-option-info">
+              <h4>Plant Trees</h4>
+              <p>Plant and nurture 10 saplings</p>
+            </div>
+            <span class="donation-option-price">₹250</span>
+          </div>
+        </div>
+
+        <!-- Right: Donation Form -->
+        <div class="donation-form-card reveal-right">
+          <h3>💚 Make a Donation</h3>
+          <p>Choose an amount or enter a custom amount below.</p>
+
+          <div class="amount-grid">
+            <button class="amount-btn">₹250</button>
+            <button class="amount-btn active">₹500</button>
+            <button class="amount-btn">₹1,000</button>
+            <button class="amount-btn">₹2,500</button>
+            <button class="amount-btn">₹5,000</button>
+            <button class="amount-btn">₹10,000</button>
+          </div>
+
+          <input type="text" class="custom-amount-input" placeholder="Or enter custom amount (₹)" value="500" />
+
+          <a href="#" class="btn-solid btn-orange w-full justify-center" style="width: 100%; justify-content: center; text-align: center;">
+            <i class="fas fa-heart"></i> Donate Now
+          </a>
+
+          <div class="trust-indicators">
+            <div class="trust-item">
+              <i class="fas fa-shield-alt"></i>
+              <span>Secure & Encrypted</span>
+            </div>
+            <div class="trust-item">
+              <i class="fas fa-receipt"></i>
+              <span>80G Tax Benefits</span>
+            </div>
+            <div class="trust-item">
+              <i class="fas fa-check-circle"></i>
+              <span>100% Transparent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EVENTS / UPDATES ==================== -->
+  <section class="events-section section-padding" id="events">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <div class="section-label" style="justify-content: center;">Latest Updates</div>
+        <h2 class="section-title" style="text-align: center;">Recent Activities & Events</h2>
+        <p class="section-subtitle mx-auto" style="text-align: center;">
+          Stay updated with our latest initiatives, community events, and impact stories.
+        </p>
+      </div>
+
+      <div class="events-grid">
+        <div class="event-card reveal delay-1">
+          <div class="event-card-image">
+            <img src="images/medical-camp.png" alt="Medical Camp" />
+            <div class="event-date-badge">
+              <div class="day">15</div>
+              <div class="month">Mar 2026</div>
+            </div>
+          </div>
+          <div class="event-card-body">
+            <span class="event-tag">Healthcare</span>
+            <h3>Free Health Camp in Rural Madhya Pradesh</h3>
+            <p>Over 500 patients received free check-ups, medicines, and health consultations at our recent medical camp.</p>
+          </div>
+        </div>
+
+        <div class="event-card reveal delay-2">
+          <div class="event-card-image">
+            <img src="images/tree-plantation.png" alt="Tree Plantation" />
+            <div class="event-date-badge">
+              <div class="day">05</div>
+              <div class="month">Mar 2026</div>
+            </div>
+          </div>
+          <div class="event-card-body">
+            <span class="event-tag">Environment</span>
+            <h3>1000 Trees Planted on World Environment Day</h3>
+            <p>Our volunteers joined hands with local communities to plant 1,000 saplings across three districts.</p>
+          </div>
+        </div>
+
+        <div class="event-card reveal delay-3">
+          <div class="event-card-image">
+            <img src="images/education-support.png" alt="Education Drive" />
+            <div class="event-date-badge">
+              <div class="day">20</div>
+              <div class="month">Feb 2026</div>
+            </div>
+          </div>
+          <div class="event-card-body">
+            <span class="event-tag">Education</span>
+            <h3>Annual School Kit Distribution Drive</h3>
+            <p>Distributed 800+ school kits including bags, books, and stationery to underprivileged students across UP.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEAM SECTION ==================== -->
+  <section class="team-section section-padding" id="team">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <div class="section-label" style="justify-content: center;">Our Leadership</div>
+        <h2 class="section-title" style="text-align: center;">The People Behind the Mission</h2>
+        <p class="section-subtitle mx-auto" style="text-align: center;">
+          <em>"Empowering Lives, Enabling Dignity"</em> — A passionate leadership dedicated to creating positive change in society.
+        </p>
+      </div>
+
+      <div class="team-grid" style="max-width: 720px; margin: 0 auto; grid-template-columns: repeat(2, 1fr);">
+        <div class="team-card reveal delay-1">
+          <div class="team-card-img">
+            <img src="images/founders/WhatsApp Image 2026-03-30 at 13.38.18.jpeg" alt="Dr. Ekta Dhariwal - Founder & President" />
+          </div>
+          <h3>Dr. Ekta Dhariwal</h3>
+          <p class="role">Founder & President</p>
+          <p>Visionary leader and founder of Aksham Kalyan Sansthan, driving impactful social development and community empowerment across India.</p>
+          <div class="team-social">
+            <a href="mailto:ektadhariwal2013@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal delay-2">
+          <div class="team-card-img">
+            <img src="images/founders/WhatsApp Image 2026-03-30 at 13.36.32.jpeg" alt="Arsi Jain - Treasurer" />
+          </div>
+          <h3>Arsi Jain</h3>
+          <p class="role">Treasurer</p>
+          <p>Ensuring financial transparency and accountability, managing resources to maximize impact across all programs and initiatives.</p>
+          <div class="team-social">
+            <a href="mailto:arsijain7@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section class="contact-section section-padding" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <div class="section-label" style="justify-content: center;">Contact Us</div>
+        <h2 class="section-title" style="text-align: center;">We'd Love to Hear From You</h2>
+        <p class="section-subtitle mx-auto" style="text-align: center;">
+          Reach out for partnerships, queries, volunteer opportunities, or just to say hello.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Contact Info -->
+        <div>
+          <div class="contact-info-card reveal-left delay-1">
+            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-info-text">
+              <h4>Our Office</h4>
+              <p>123 Social Impact Road, Lucknow,<br /> Uttar Pradesh — 226001, India</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card reveal-left delay-2">
+            <div class="contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-info-text">
+              <h4>Phone</h4>
+              <p>+91 98765 43210<br />+91 85432 10987</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card reveal-left delay-3">
+            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info-text">
+              <h4>Email</h4>
+              <p>info@akshamkalyansansthan.org<br />donate@akshamkalyansansthan.org</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card reveal-left delay-4">
+            <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-info-text">
+              <h4>Working Hours</h4>
+              <p>Mon – Sat: 9:00 AM – 6:00 PM<br />Sunday: Closed</p>
+            </div>
+          </div>
+
+          <div class="contact-map reveal-left delay-5">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227749.99872404996!2d80.78056467028782!3d26.84881765461565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form reveal-right">
+          <h3>Send Us a Message</h3>
+          <p>Fill out the form below and we'll get back to you promptly.</p>
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject">
+                  <option>General Inquiry</option>
+                  <option>Volunteer</option>
+                  <option>Partnership</option>
+                  <option>Donation</option>
+                  <option>Media & Press</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" placeholder="Tell us how you'd like to help or collaborate..." required></textarea>
+            </div>
+            <button type="submit" class="btn-solid w-full" style="width: 100%; justify-content: center;">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" id="footer">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="images/logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 8px;" />
+            <h4 style="margin-bottom: 0;">Aksham Kalyan Sansthan</h4>
+          </div>
+          <p>
+            A registered Indian NGO dedicated to education, healthcare, women empowerment,
+            environmental conservation, and community development since 2015.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> About Us</a></li>
+            <li><a href="#programs"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Our Programs</a></li>
+            <li><a href="#gallery"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Gallery</a></li>
+            <li><a href="#events"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Events</a></li>
+            <li><a href="#team"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Our Team</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Programs -->
+        <div>
+          <h4>Our Programs</h4>
+          <ul class="footer-links">
+            <li><a href="#programs"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Education Support</a></li>
+            <li><a href="#programs"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Healthcare Camps</a></li>
+            <li><a href="#programs"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Women Empowerment</a></li>
+            <li><a href="#programs"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Environment</a></li>
+            <li><a href="#programs"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Disaster Relief</a></li>
+            <li><a href="#donate"><i class="fas fa-chevron-right" style="font-size: 0.6rem;"></i> Donate Now</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4>Stay Connected</h4>
+          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 12px;">
+            Subscribe to our newsletter for impact updates and stories from the field.
+          </p>
+          <form class="footer-newsletter-input">
+            <input type="email" placeholder="Your email address" />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div style="margin-top: 24px;">
+            <a href="#donate" class="btn-solid btn-orange" style="font-size: 0.85rem; padding: 12px 24px;">
+              <i class="fas fa-heart"></i> Donate Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aksham Kalyan Sansthan. All Rights Reserved.</p>
+        <p>Designed with ❤️ for social impact | <a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== LIGHTBOX ==================== -->
+  <div class="lightbox-premium" id="lightbox">
+    <div class="lightbox-premium__backdrop"></div>
+    <button class="lightbox-premium__close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+    <button class="lightbox-premium__nav lightbox-premium__nav--prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-premium__nav lightbox-premium__nav--next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-premium__content">
+      <img src="" alt="Gallery Preview" />
+      <div class="lightbox-premium__caption">
+        <span class="lightbox-premium__category"></span>
+        <h4 class="lightbox-premium__title"></h4>
+      </div>
+    </div>
+    <div class="lightbox-premium__counter"></div>
+  </div>
+
+  <!-- ==================== BACK TO TOP ==================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

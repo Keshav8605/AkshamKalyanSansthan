@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impact Gallery — Aksham Kalyan Sansthan</title>
+  <meta name="description" content="Explore the complete gallery of Aksham Kalyan Sansthan's social impact — education drives, healthcare camps, women empowerment programs, environmental initiatives, and community events across India." />
+  <meta name="keywords" content="NGO gallery, India, social impact, education, healthcare, women empowerment, community events, photos" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#1a8a5c',
+              'green-dark': '#14694a',
+              'green-light': '#e8f5ef',
+              blue: '#2563eb',
+              'blue-light': '#eff6ff',
+              orange: '#f59e0b',
+              'orange-light': '#fef3c7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ===== GALLERY PAGE SPECIFIC STYLES ===== */
+
+    /* Hero Header */
+    .gallery-hero {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a2520 0%, #0f3028 40%, #0a1820 100%);
+    }
+
+    .gallery-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(26, 138, 92, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .gallery-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .gallery-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 120px 20px 60px;
+    }
+
+    .gallery-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 20px;
+      border-radius: 50px;
+      color: var(--accent-orange);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      animation: fadeInDown 0.8s ease forwards;
+    }
+
+    .gallery-hero__title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      animation: fadeInUp 0.8s ease 0.2s forwards;
+      opacity: 0;
+    }
+
+    .gallery-hero__title span {
+      background: linear-gradient(135deg, var(--accent-orange), #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gallery-hero__subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 550px;
+      margin: 0 auto;
+      line-height: 1.8;
+      animation: fadeInUp 0.8s ease 0.4s forwards;
+      opacity: 0;
+    }
+
+    .gallery-hero__stats {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      margin-top: 40px;
+      animation: fadeInUp 0.8s ease 0.6s forwards;
+      opacity: 0;
+    }
+
+    .gallery-hero__stat-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .gallery-hero__stat-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 4px;
+    }
+
+    /* Filter Tabs */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 0 20px;
+      margin-bottom: 48px;
+    }
+
+    .gallery-filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-light);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .gallery-filter-btn:hover {
+      color: var(--primary-green);
+      border-color: var(--primary-green-light);
+      background: var(--primary-green-light);
+    }
+
+    .gallery-filter-btn.active {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+      border-color: var(--primary-green);
+      box-shadow: 0 4px 16px rgba(26, 138, 92, 0.3);
+    }
+
+    .gallery-filter-btn i {
+      font-size: 0.75rem;
+    }
+
+    /* Full Gallery Grid */
+    .gallery-full-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 240px;
+      gap: 16px;
+    }
+
+    .gallery-full-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .gallery-full-card.hidden {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .gallery-full-card:hover {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-6px);
+    }
+
+    .gallery-full-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .gallery-full-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-full-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(10, 26, 20, 0.9) 0%,
+        rgba(10, 26, 20, 0.35) 40%,
+        transparent 70%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
+    .gallery-full-card:hover .gallery-full-card__overlay {
+      opacity: 1;
+    }
+
+    .gallery-full-card__category {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.85);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 6px;
+      width: fit-content;
+      transform: translateY(8px);
+      transition: transform 0.35s ease 0.05s;
+    }
+
+    .gallery-full-card:hover .gallery-full-card__category {
+      transform: translateY(0);
+    }
+
+    .gallery-full-card__title {
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0;
+      transform: translateY(8px);
+      transition: transform 0.35s ease 0.1s;
+    }
+
+    .gallery-full-card:hover .gallery-full-card__title {
+      transform: translateY(0);
+    }
+
+    /* Feature sizes for variety */
+    .gallery-full-card:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-full-card:nth-child(5) {
+      grid-column: span 2;
+    }
+
+    .gallery-full-card:nth-child(9) {
+      grid-row: span 2;
+    }
+
+    .gallery-full-card:nth-child(14) {
+      grid-column: span 2;
+    }
+
+    .gallery-full-card:nth-child(18) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    /* Back to Home Link */
+    .gallery-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      font-weight: 500;
+      position: absolute;
+      top: 90px;
+      left: 32px;
+      z-index: 10;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .gallery-back-link:hover {
+      color: var(--accent-orange);
+    }
+
+    /* Image count badge */
+    .gallery-count-badge {
+      text-align: center;
+      margin-top: 48px;
+      padding: 16px;
+    }
+
+    .gallery-count-badge span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-light);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .gallery-count-badge span i {
+      color: var(--primary-green);
+    }
+
+    /* Responsive for gallery page */
+    @media (max-width: 1024px) {
+      .gallery-full-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+      }
+      .gallery-full-card:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .gallery-hero__stats {
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-full-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+      }
+      .gallery-full-card:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+      .gallery-full-card:nth-child(5),
+      .gallery-full-card:nth-child(9),
+      .gallery-full-card:nth-child(14),
+      .gallery-full-card:nth-child(18) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      .gallery-hero__stats {
+        gap: 24px;
+      }
+      .gallery-hero__stat-number {
+        font-size: 1.5rem;
+      }
+      .gallery-back-link {
+        top: 80px;
+        left: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-full-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+      }
+      .gallery-full-card:nth-child(1),
+      .gallery-full-card:nth-child(5),
+      .gallery-full-card:nth-child(18) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      .gallery-hero__stats {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .gallery-filters {
+        gap: 6px;
+      }
+      .gallery-filter-btn {
+        padding: 8px 14px;
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Aksham Kalyan Sansthan Logo" />
+        <div class="nav-logo-text" style="color: var(--text-dark);">
+          Aksham Kalyan Sansthan
+          <span>Empowering Communities</span>
+        </div>
+      </a>
+
+      <div class="nav-links flex items-center gap-1">
+        <a href="index.html#about" style="color: var(--text-body);">About</a>
+        <a href="index.html#programs" style="color: var(--text-body);">Our Work</a>
+        <a href="index.html#gallery" style="color: var(--text-body);">Gallery</a>
+        <a href="index.html#events" style="color: var(--text-body);">Events</a>
+        <a href="index.html#team" style="color: var(--text-body);">Team</a>
+        <a href="index.html#contact" style="color: var(--text-body);">Contact</a>
+        <a href="index.html#donate" class="nav-donate-btn">Donate ❤️</a>
+      </div>
+
+      <div class="mobile-menu-btn" id="mobile-menu-btn">
+        <span style="background: var(--text-dark);"></span>
+        <span style="background: var(--text-dark);"></span>
+        <span style="background: var(--text-dark);"></span>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- ==================== GALLERY HERO ==================== -->
+  <section class="gallery-hero">
+    <a href="index.html" class="gallery-back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    <div class="gallery-hero__content">
+      <div class="gallery-hero__badge">
+        <i class="fas fa-camera"></i> Our Impact in Pictures
+      </div>
+      <h1 class="gallery-hero__title">
+        Our <span>Impact Gallery</span>
+      </h1>
+      <p class="gallery-hero__subtitle">
+        Every image tells a story of hope, resilience, and transformation. Explore the moments that define who we are and the lives we've touched.
+      </p>
+      <div class="gallery-hero__stats">
+        <div>
+          <div class="gallery-hero__stat-number">24+</div>
+          <div class="gallery-hero__stat-label">Photos</div>
+        </div>
+        <div>
+          <div class="gallery-hero__stat-number">6</div>
+          <div class="gallery-hero__stat-label">Categories</div>
+        </div>
+        <div>
+          <div class="gallery-hero__stat-number">10+</div>
+          <div class="gallery-hero__stat-label">Years of Impact</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY CONTENT ==================== -->
+  <section class="section-padding" style="background: var(--bg-white);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Filter Tabs -->
+      <div class="gallery-filters" id="gallery-filters">
+        <button class="gallery-filter-btn active" data-filter="all">
+          <i class="fas fa-th"></i> All
+        </button>
+        <button class="gallery-filter-btn" data-filter="education">
+          <i class="fas fa-graduation-cap"></i> Education
+        </button>
+        <button class="gallery-filter-btn" data-filter="healthcare">
+          <i class="fas fa-heartbeat"></i> Healthcare
+        </button>
+        <button class="gallery-filter-btn" data-filter="women">
+          <i class="fas fa-female"></i> Women Empowerment
+        </button>
+        <button class="gallery-filter-btn" data-filter="environment">
+          <i class="fas fa-seedling"></i> Environment
+        </button>
+        <button class="gallery-filter-btn" data-filter="community">
+          <i class="fas fa-users"></i> Community Events
+        </button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-full-grid" id="gallery-full-grid">
+
+        <!-- 1: Community Awareness (large feature) -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/community-awareness.jpeg" alt="Community Awareness Program" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Community Awareness Drive</h4>
+          </div>
+        </div>
+
+        <!-- 2: Education Books -->
+        <div class="gallery-full-card" data-category="education">
+          <img src="images/gallery/education-books.jpeg" alt="Education Book Distribution" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Education</span>
+            <h4 class="gallery-full-card__title">Book Distribution Program</h4>
+          </div>
+        </div>
+
+        <!-- 3: Healthcare Visit -->
+        <div class="gallery-full-card" data-category="healthcare">
+          <img src="images/gallery/healthcare-visit.jpeg" alt="Hospital Visit" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Healthcare</span>
+            <h4 class="gallery-full-card__title">Hospital Patient Care</h4>
+          </div>
+        </div>
+
+        <!-- 4: Women Gathering -->
+        <div class="gallery-full-card" data-category="women">
+          <img src="images/gallery/women-gathering.jpeg" alt="Women Empowerment Gathering" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Women Empowerment</span>
+            <h4 class="gallery-full-card__title">Women's Awareness Camp</h4>
+          </div>
+        </div>
+
+        <!-- 5: Environment Plantation (wide) -->
+        <div class="gallery-full-card" data-category="environment">
+          <img src="images/gallery/environment-plantation.jpeg" alt="Tree Plantation Drive" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Environment</span>
+            <h4 class="gallery-full-card__title">Tree Plantation Drive</h4>
+          </div>
+        </div>
+
+        <!-- 6: Hygiene Distribution -->
+        <div class="gallery-full-card" data-category="women">
+          <img src="images/gallery/hygiene-distribution.jpeg" alt="Hygiene Kit Distribution" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Women Empowerment</span>
+            <h4 class="gallery-full-card__title">Hygiene Kit Distribution</h4>
+          </div>
+        </div>
+
+        <!-- 7: Education Kids -->
+        <div class="gallery-full-card" data-category="education">
+          <img src="images/gallery/education-kids.jpeg" alt="Education Support for Children" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Education</span>
+            <h4 class="gallery-full-card__title">Stationery Distribution to Children</h4>
+          </div>
+        </div>
+
+        <!-- 8: Sports Trophy -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/sports-trophy.jpeg" alt="Sports Championship" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community & Sports</span>
+            <h4 class="gallery-full-card__title">Sports Championship Celebration</h4>
+          </div>
+        </div>
+
+        <!-- 9: Healthcare Hospital (tall) -->
+        <div class="gallery-full-card" data-category="healthcare">
+          <img src="images/gallery/healthcare-hospital.jpeg" alt="Hospital Ward Visit" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Healthcare</span>
+            <h4 class="gallery-full-card__title">Hospital Ward Visit</h4>
+          </div>
+        </div>
+
+        <!-- 10: Community Children -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/community-children.jpeg" alt="Community Outreach with Children" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Community Outreach with Children</h4>
+          </div>
+        </div>
+
+        <!-- 11: Specially Abled -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/specially-abled-wheelchair.jpeg" alt="Wheelchair Distribution" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Wheelchair Distribution</h4>
+          </div>
+        </div>
+
+        <!-- 12: Disaster Relief -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/disaster-relief-site.jpeg" alt="Disaster Relief" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Disaster Relief Assessment</h4>
+          </div>
+        </div>
+
+        <!-- 13: Healthcare Ward -->
+        <div class="gallery-full-card" data-category="healthcare">
+          <img src="images/gallery/healthcare-ward.jpeg" alt="Healthcare Ward Support" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Healthcare</span>
+            <h4 class="gallery-full-card__title">Hospital Ward Support</h4>
+          </div>
+        </div>
+
+        <!-- 14: Community Event Indoor (wide) -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/community-event-indoor.jpeg" alt="Community Event" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Children's Cultural Event</h4>
+          </div>
+        </div>
+
+        <!-- 15: Hygiene Awareness -->
+        <div class="gallery-full-card" data-category="women">
+          <img src="images/gallery/hygiene-awareness.jpeg" alt="Hygiene Awareness Program" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Women Empowerment</span>
+            <h4 class="gallery-full-card__title">Hygiene Awareness Session</h4>
+          </div>
+        </div>
+
+        <!-- 16: Community Connect -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/community-connect.jpeg" alt="Community Connect" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Connecting with Children</h4>
+          </div>
+        </div>
+
+        <!-- 17: Community Distribution -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/community-distribution.jpeg" alt="Distribution Drive" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Community Distribution Drive</h4>
+          </div>
+        </div>
+
+        <!-- 18: Community Event Outdoor (large feature) -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/community-event-outdoor.jpeg" alt="Community Event Outdoor" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Community Outreach Event</h4>
+          </div>
+        </div>
+
+        <!-- 19: Education Stationery -->
+        <div class="gallery-full-card" data-category="education">
+          <img src="images/gallery/education-stationery.jpeg" alt="Education Stationery Distribution" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Education</span>
+            <h4 class="gallery-full-card__title">Stationery Kit Distribution</h4>
+          </div>
+        </div>
+
+        <!-- 20: Women Empowerment Event -->
+        <div class="gallery-full-card" data-category="women">
+          <img src="images/gallery/women-empowerment-event.jpeg" alt="Women Empowerment Event" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Women Empowerment</span>
+            <h4 class="gallery-full-card__title">Women's Awareness Event</h4>
+          </div>
+        </div>
+
+        <!-- 21: Community Outreach -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/community-outreach.jpeg" alt="Community Outreach" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Grassroots Outreach</h4>
+          </div>
+        </div>
+
+        <!-- 22: Women Empowerment Children -->
+        <div class="gallery-full-card" data-category="women">
+          <img src="images/gallery/women-empowerment-children.jpeg" alt="Supporting Children" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Women Empowerment</span>
+            <h4 class="gallery-full-card__title">Empowering Young Girls</h4>
+          </div>
+        </div>
+
+        <!-- 23: Disaster Relief Distribution -->
+        <div class="gallery-full-card" data-category="community">
+          <img src="images/gallery/disaster-relief-distribution.jpeg" alt="Relief Distribution" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Community Events</span>
+            <h4 class="gallery-full-card__title">Relief Kit Distribution</h4>
+          </div>
+        </div>
+
+        <!-- 24: Healthcare Patient -->
+        <div class="gallery-full-card" data-category="healthcare">
+          <img src="images/gallery/healthcare-patient.jpeg" alt="Patient Support" loading="lazy" />
+          <div class="gallery-full-card__overlay">
+            <span class="gallery-full-card__category">Healthcare</span>
+            <h4 class="gallery-full-card__title">Supporting Patients</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Count -->
+      <div class="gallery-count-badge" id="gallery-count">
+        <span><i class="fas fa-images"></i> Showing <strong id="visible-count">24</strong> of 24 moments</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CTA SECTION ==================== -->
+  <section style="background: linear-gradient(135deg, #0a2520 0%, #0f3028 50%, #0a1820 100%); padding: 80px 0; text-align: center;">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: #fff; margin-bottom: 16px;">
+        Want to Be Part of Our Next Story?
+      </h2>
+      <p style="font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">
+        Join us as a volunteer, donor, or partner and help us create more moments of impact.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="index.html#donate" class="btn-solid btn-orange" style="padding: 16px 36px;">
+          <i class="fas fa-heart"></i> Donate Now
+        </a>
+        <a href="index.html#contact" class="btn-secondary" style="padding: 16px 36px;">
+          <i class="fas fa-users"></i> Get Involved
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" id="footer">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="footer-bottom" style="border-top: none;">
+        <p>&copy; 2026 Aksham Kalyan Sansthan. All Rights Reserved.</p>
+        <p>Designed with ❤️ for social impact | <a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== LIGHTBOX ==================== -->
+  <div class="lightbox-premium" id="gallery-lightbox">
+    <div class="lightbox-premium__backdrop"></div>
+    <button class="lightbox-premium__close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+    <button class="lightbox-premium__nav lightbox-premium__nav--prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-premium__nav lightbox-premium__nav--next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-premium__content">
+      <img src="" alt="Gallery Preview" />
+      <div class="lightbox-premium__caption">
+        <span class="lightbox-premium__category"></span>
+        <h4 class="lightbox-premium__title"></h4>
+      </div>
+    </div>
+    <div class="lightbox-premium__counter"></div>
+  </div>
+
+  <!-- ==================== BACK TO TOP ==================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Gallery Page JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // ===== Navbar & Back to Top =====
+      const backToTop = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        if (backToTop) {
+          backToTop.classList.toggle('visible', window.scrollY > 600);
+        }
+      });
+      if (backToTop) {
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // ===== Mobile Menu =====
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      function toggleMobileMenu() {
+        if (!mobileMenuBtn || !navLinks) return;
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('open');
+        if (mobileOverlay) mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+      }
+      if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+      if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileMenu);
+      if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            if (navLinks.classList.contains('open')) toggleMobileMenu();
+          });
+        });
+      }
+
+      // ===== Filter Tabs =====
+      const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+      const galleryCards = document.querySelectorAll('.gallery-full-card');
+      const visibleCountEl = document.getElementById('visible-count');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.dataset.filter;
+          let visibleCount = 0;
+
+          galleryCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.classList.remove('hidden');
+              card.style.display = '';
+              visibleCount++;
+            } else {
+              card.classList.add('hidden');
+              // Use timeout to allow animation
+              setTimeout(() => {
+                if (card.classList.contains('hidden')) {
+                  card.style.display = 'none';
+                }
+              }, 400);
+            }
+          });
+
+          if (visibleCountEl) visibleCountEl.textContent = visibleCount;
+        });
+      });
+
+      // ===== Lightbox =====
+      const lightbox = document.getElementById('gallery-lightbox');
+      const lightboxImg = lightbox ? lightbox.querySelector('.lightbox-premium__content img') : null;
+      const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-premium__close') : null;
+      const lightboxPrev = lightbox ? lightbox.querySelector('.lightbox-premium__nav--prev') : null;
+      const lightboxNext = lightbox ? lightbox.querySelector('.lightbox-premium__nav--next') : null;
+      const lightboxCategory = lightbox ? lightbox.querySelector('.lightbox-premium__category') : null;
+      const lightboxTitle = lightbox ? lightbox.querySelector('.lightbox-premium__title') : null;
+      const lightboxCounter = lightbox ? lightbox.querySelector('.lightbox-premium__counter') : null;
+      let currentIndex = 0;
+      let items = [];
+
+      function collectVisibleItems() {
+        items = [];
+        document.querySelectorAll('.gallery-full-card:not(.hidden)').forEach(card => {
+          const img = card.querySelector('img');
+          const cat = card.querySelector('.gallery-full-card__category');
+          const title = card.querySelector('.gallery-full-card__title');
+          if (img) {
+            items.push({
+              src: img.src,
+              alt: img.alt,
+              category: cat ? cat.textContent : '',
+              title: title ? title.textContent : ''
+            });
+          }
+        });
+      }
+
+      galleryCards.forEach(card => {
+        card.addEventListener('click', () => {
+          collectVisibleItems();
+          const img = card.querySelector('img');
+          if (!img) return;
+          // Find the index of the clicked card in visible items
+          currentIndex = items.findIndex(item => item.src === img.src);
+          if (currentIndex === -1) currentIndex = 0;
+          openLightbox();
+        });
+      });
+
+      function openLightbox() {
+        if (!lightbox || items.length === 0) return;
+        updateContent();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function updateContent() {
+        const item = items[currentIndex];
+        if (!item || !lightboxImg) return;
+        lightboxImg.src = item.src;
+        lightboxImg.alt = item.alt;
+        if (lightboxCategory) lightboxCategory.textContent = item.category;
+        if (lightboxTitle) lightboxTitle.textContent = item.title;
+        if (lightboxCounter) lightboxCounter.textContent = `${currentIndex + 1} / ${items.length}`;
+      }
+
+      function closeLightbox() {
+        if (lightbox) {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+
+      function prevImg() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateContent();
+      }
+
+      function nextImg() {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateContent();
+      }
+
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      if (lightboxPrev) lightboxPrev.addEventListener('click', prevImg);
+      if (lightboxNext) lightboxNext.addEventListener('click', nextImg);
+      if (lightbox) {
+        lightbox.querySelector('.lightbox-premium__backdrop').addEventListener('click', closeLightbox);
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox || !lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') prevImg();
+        if (e.key === 'ArrowRight') nextImg();
+      });
+
+      // ===== Fade-in animations on scroll =====
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      galleryCards.forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.6s ease ${i * 0.05}s, transform 0.6s ease ${i * 0.05}s`;
+        observer.observe(card);
+      });
+
+    });
+  </script>
+
+</body>
+</html>
